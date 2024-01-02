@@ -1,0 +1,89 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  cursor: none;
+  box-sizing: border-box;
+}
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#wrapper {
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  color: white;
+  pointer-events: none;
+  font-weight: 500;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#canvas {
+  background-color: #dfec98;
+  width: 100%;
+  height: 100%;
+}
+
+.f1 {
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 4rem;
+  animation: anm1 3s steps(60, end);
+}
+.s2 {
+  opacity: 0;
+}
+.f1.s2 {
+  opacity: 1;
+}
+.line {
+  animation: 2s linear 0s normal none infinite running anm2;
+}
+@keyframes anm1 {
+  0% {
+    width: 0px;
+  }
+}
+@keyframes anm2 {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blink-gradient {
+  0% {
+    background-position: 0% 50%;
+}
+25% {
+    background-position: 100% 50%;
+}
+50% {
+    background-position: 200% 50%;
+}
+75% {
+    background-position: 300% 50%;
+}
+100% {
+    background-position: 400% 50%;
+}
+}
+
+.f1 {
+  font-weight: bold;
+  color: transparent;
+  background-image: linear-gradient(45deg, #ff6a00, #ee0979, #ffc600, #22c1c3, #fdbb2d);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: blink-gradient 2s linear infinite;
+}
